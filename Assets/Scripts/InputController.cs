@@ -16,6 +16,7 @@ public class InputController : MonoBehaviour
     public float speed;
     public float yMultipler;
     public bool onThrow;
+    public Vector3 multiplier;
     [SerializeField] float yMax, yMin, xMax;
     
 
@@ -50,18 +51,19 @@ public class InputController : MonoBehaviour
         if (dragging)
         {
             analDir = Input.mousePosition;
-            Vector3 dir =  analDir - analPivo;
-            dir.y = analPivo.y - analDir.y;
+            Vector3 dir =  analPivo - analDir;
+            //dir.y = analPivo.y - analDir.y;
             Vector3 aDir = analDir - analPivo;
-            AnalogControl(aDir);
-            // dir = new Vector3(dir.x, 2, dir.y);
+            /* AnalogControl(aDir);
+             dir = new Vector3(dir.x, 2, dir.y);
             var mag = (joystickRt.anchoredPosition - analogOrigin).magnitude / radius; 
             direction += speed*( new Vector3(dir.x, 0, dir.y)/mag)*Time.deltaTime;
             direction.y = new Vector2(direction.x, direction.z).magnitude * yMultipler ;
             if (direction.y >= yMax) direction.y = yMax;
-            //print(direction.x);
             if (direction.x >= xMax) direction.x = xMax;
-            else if (direction.x <= xMax * -1) direction.x = xMax * -1;
+            else if (direction.x <= xMax * -1) direction.x = xMax * -1;*/
+            direction = new Vector3(dir.x * multiplier.x, dir.y * multiplier.y, dir.y * multiplier.z);
+
             Ball.instance.DrawProjection(direction);
         }
         

@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 8941874014784810054, guid: 733dc01adf33c5b4ab1afbd312c98b95,
         type: 3}
       propertyPath: speed
-      value: 0.017
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 8941874014784810054, guid: 733dc01adf33c5b4ab1afbd312c98b95,
         type: 3}
@@ -316,9 +316,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8941874014784810054, guid: 733dc01adf33c5b4ab1afbd312c98b95,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941874014784810054, guid: 733dc01adf33c5b4ab1afbd312c98b95,
+        type: 3}
       propertyPath: joystickRt
       value: 
       objectReference: {fileID: 1109805927}
+    - target: {fileID: 8941874014784810054, guid: 733dc01adf33c5b4ab1afbd312c98b95,
+        type: 3}
+      propertyPath: multiplier.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941874014784810054, guid: 733dc01adf33c5b4ab1afbd312c98b95,
+        type: 3}
+      propertyPath: multiplier.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8941874014784810054, guid: 733dc01adf33c5b4ab1afbd312c98b95,
+        type: 3}
+      propertyPath: multiplier.z
+      value: 0.005
+      objectReference: {fileID: 0}
     - target: {fileID: 8941874014784810055, guid: 733dc01adf33c5b4ab1afbd312c98b95,
         type: 3}
       propertyPath: m_RootOrder
@@ -2392,6 +2412,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1083091864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8941874014784810053, guid: 733dc01adf33c5b4ab1afbd312c98b95,
+    type: 3}
+  m_PrefabInstance: {fileID: 368952536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1083091866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083091864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3190b554229e3cb4e8005d6a7f61d949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 1, y: 1, z: 1}
+  yMultiplier: 1.5
 --- !u!1 &1086785771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3195,8 +3235,8 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 368952536}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1083091864}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cca9e31af29c5b48b5320efb51f23e6, type: 3}
   m_Name: 
@@ -3448,7 +3488,7 @@ MonoBehaviour:
   - {fileID: 8709109724930407820, guid: bde991e8d3cf1d84b8dd92b6d88f07ab, type: 3}
   - {fileID: 4904978427083986672, guid: 59284b09a5c6d7347a543e8dc9104387, type: 3}
   - {fileID: 2681786224078420631, guid: 0a0603374a75334439b4f7ed9a017463, type: 3}
-  forceLevel: 3
+  forceLevel: 2
   force: 0
 --- !u!4 &1539886766
 Transform:
@@ -3616,6 +3656,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1378090764}
         m_TargetAssemblyTypeName: InputController, Assembly-CSharp
+        m_MethodName: Throw
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1083091866}
+        m_TargetAssemblyTypeName: SecondInputC, Assembly-CSharp
         m_MethodName: Throw
         m_Mode: 1
         m_Arguments:
